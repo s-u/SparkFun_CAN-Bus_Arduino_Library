@@ -117,7 +117,7 @@ uint8_t mcp2515_read_status(uint8_t type)
 }
 
 // -------------------------------------------------------------------------
-uint8_t mcp2515_init(uint8_t speed)
+uint8_t mcp2515_init(uint8_t speed, uint8_t mode)
 {
 		
 	
@@ -189,7 +189,7 @@ uint8_t mcp2515_init(uint8_t speed)
 	mcp2515_write_register(RXB1CTRL, (1<<RXM1)|(1<<RXM0));
 	
 	// reset device to normal mode
-	mcp2515_write_register(CANCTRL, 0);
+	mcp2515_write_register(CANCTRL, mode << 5);
 //	SET(LED2_HIGH);
 	return true;
 }

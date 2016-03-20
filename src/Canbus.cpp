@@ -171,7 +171,7 @@ char CanbusClass::ecu_req(unsigned char pid,  char *buffer)
 
 char CanbusClass::init(unsigned char speed) {
 
-  return mcp2515_init(speed);
+  return mcp2515_init(speed, 0);
  
 }
 
